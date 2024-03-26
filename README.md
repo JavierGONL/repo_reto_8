@@ -8,18 +8,41 @@
 1. Imprimir un listado con los números del 1 al 100 cada uno con su respectivo cuadrado.
 ________________________________
 ```python
+#Imprimir un listado con los números del 1 al 100 cada uno con su respectivo cuadrado.
 
+if __name__ == "__main__":
+    for i in range(1,101):
+        print(f"{i} al cuadrado es {i**2}")
 ```
 
 2.  Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro listado con los números pares desde 2 hasta 1000.
 _________________________________________
 ```python
+#Imprimir un listado con los números impares desde 1 hasta 999 y seguidamente otro listado con los números pares desde 2 hasta 1000.
 
+
+if __name__ == '__main__':
+    print("Numeros impares desde 1 hasta 999")
+    for i in range(1, 1000, 2):
+        print(i)
+
+    print("Numeros pares desde 2 hasta 1000")
+    for i in range(2, 1001, 2):
+        print(i)
 ```
 3.  Imprimir los números pares en forma descendente hasta 2 que son menores o iguales a un número natural n ≥ 2 dado
 _________________________________________
 ```python
-
+#Imprimir los números pares en forma descendente hasta 2 que son menores o iguales a un número natural n ≥ 2 dado
+if __name__ == '__main__':
+    numeroN : int = input("Ingrese un numero entero: ")
+    if numeroN % 2 == 0:
+        for i in range(numeroN,2,-1):
+            print(i)
+    else:
+        numeroN = numeroN - 1
+        for i in range(numeroN,2,-1):
+            print(i)
 ```
 4. Imprimir los números de 1 hasta un número natural n dado, cada uno con su respectivo factorial
 _________________________________________

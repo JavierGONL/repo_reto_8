@@ -108,12 +108,25 @@ _________________________________________
 $$sin(x) \approx sin(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)!}$$
 _________________________________________
 ```python
+import math
+def factorial(numeroN = float)->float:
+    if numeroN == 0:
+        return 1
+    else:
+        return numeroN * factorial(numeroN - 1)
+def funcion_seno(numeroX: float, numeroN: float = 20) -> float:
+    resultado = 0
+    for n in range(numeroN + 1):
+        seno_serie_maclaurin = ((-1) ** n) * ((numeroX) ** (2 * n + 1)) / factorial(2 * n + 1)
+        resultado += seno_serie_maclaurin
+    return resultado
 
+if __name__ == "__main__":
+    numeroX = float(input("ingrese un numero: "))
+    print(f"el resultado aproximado de la funcion seno es: {funcion_seno(numeroX)}, el verdadero es: {math.sin(numeroX)}"))
 ```
 10. Diseñar una función que permita calcular una aproximación de la función arcotangente alrededor de 0 para cualquier valor x en el rango [-1, 1], utilizando los primeros n términos de la serie de Maclaurin. **Nota:** use *math* para traer la función arctan y mostrar la diferencia entre el valor real y la aproximación.
 $$arctan(x) \approx arctan(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)}$$
-
-**Disclaimer:** Para las aproximaciones de series determine con que valor n se obtiene menos del 0.1% de error.
 _________________________________________
 ```python
 

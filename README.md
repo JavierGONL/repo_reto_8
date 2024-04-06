@@ -123,7 +123,7 @@ def rango_de_error(numeroX, numeroN):
 if __name__ == "__main__":
     numeroX = float(input("ingrese un numero real: "))    
     resultado = funcion_exponencial(numeroX)
-    print(f"resultado de la aproximacion: {resultado} y el resultado real es {math.exp(numeroX)} y el rango de error es {rango_de_error(numeroX,120)}")
+    print(f"resultado de la aproximacion: {resultado} y el resultado real es {math.exp(numeroX)} y el rango de error es {rango_de_error(numeroX,120)}%")
 ```
 9. Diseñar una función que permita calcular una aproximación de la función seno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Maclaurin. **Nota:** use *math* para traer la función seno y mostrar la diferencia entre el valor real y la aproximación.
 $$sin(x) \approx sin(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)!}$$
@@ -141,10 +141,15 @@ def funcion_seno(numeroX: float, numeroN: float = 20) -> float:
         seno_serie_maclaurin = ((-1) ** n) * ((numeroX) ** (2 * n + 1)) / factorial(2 * n + 1)
         resultado += seno_serie_maclaurin
     return resultado
-
+def rango_de_error(numeroX, numeroN):
+    maclaurin = funcion_seno(numeroX, numeroN)
+    math_sin = math.sin(numeroX)
+    error_relativo = (math_sin - maclaurin) / math_sin
+    porcentaje_error = abs(error_relativo) * 100
+    return porcentaje_error    
 if __name__ == "__main__":
     numeroX = float(input("ingrese un numero: "))
-    print(f"el resultado aproximado de la funcion seno es: {funcion_seno(numeroX)}, el verdadero es: {math.sin(numeroX)}"))
+    print(f"el resultado aproximado de la funcion seno es: {funcion_seno(numeroX)}, el verdadero es: {math.sin(numeroX)} y el rango de error es {rango_de_error(numeroX, 20)}%")    
 ```
 10. Diseñar una función que permita calcular una aproximación de la función arcotangente alrededor de 0 para cualquier valor x en el rango [-1, 1], utilizando los primeros n términos de la serie de Maclaurin. **Nota:** use *math* para traer la función arctan y mostrar la diferencia entre el valor real y la aproximación.
 $$arctan(x) \approx arctan(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)}$$
@@ -170,5 +175,5 @@ if __name__ == "__main__":
         print("el numero ingresado no esta en el rango")
         exit()
     else:
-        print(f"el resultado de la funcion arctan aproximada es {funcion_arctan(numeroX,)}, y el real es {math.atan(numeroX)} y el rango de error es aprox: {rango_de_error(numeroX, 200)}")
+        print(f"el resultado de la funcion arctan aproximada es {funcion_arctan(numeroX,)}, y el real es {math.atan(numeroX)} y el rango de error es aprox: {rango_de_error(numeroX, 200)}%")
 ```

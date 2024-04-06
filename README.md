@@ -109,7 +109,7 @@ $$sin(x) \approx sin(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)!}
 _________________________________________
 ```python
 import math
-def factorial(numeroN = float)->float:
+def factorial (numeroN = int)->int:
     if numeroN == 0:
         return 1
     else:

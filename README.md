@@ -170,7 +170,7 @@ def rango_de_error(numeroX, numeroN):
     porcentaje_error = abs(error_relativo) * 100
     return porcentaje_error
 if __name__ == "__main__":
-    numeroX = float(input("ingrese un numeroen el rango(-1,1): "))
+    numeroX = float(input("ingrese un numero en el rango(-1,1): "))
     if numeroX >1 or numeroX <-1:
         print("el numero ingresado no esta en el rango")
         exit()

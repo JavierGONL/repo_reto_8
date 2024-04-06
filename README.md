@@ -166,5 +166,9 @@ def rango_de_error(numeroX, numeroN):
     return porcentaje_error
 if __name__ == "__main__":
     numeroX = float(input("ingrese un numeroen el rango(-1,1): "))
-    print(f"el resultado de la funcion arctan aproximada es {funcion_arctan(numeroX,)}, y el real es {math.atan(numeroX)} y el rango de error es aprox: {rango_de_error(numeroX, 200)}")
+    if numeroX >1 or numeroX <-1:
+        print("el numero ingresado no esta en el rango")
+        exit()
+    else:
+        print(f"el resultado de la funcion arctan aproximada es {funcion_arctan(numeroX,)}, y el real es {math.atan(numeroX)} y el rango de error es aprox: {rango_de_error(numeroX, 200)}")
 ```

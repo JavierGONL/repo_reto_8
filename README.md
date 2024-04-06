@@ -123,7 +123,7 @@ def rango_de_error(numeroX, numeroN):
 if __name__ == "__main__":
     numeroX = float(input("ingrese un numero real: "))    
     resultado = funcion_exponencial(numeroX)
-    print(f"resultado de la aproximacion: {resultado} y el resultado real es {math.exp(numeroX)} y el rango de error es {rango_de_error(numeroX,20)}")
+    print(f"resultado de la aproximacion: {resultado} y el resultado real es {math.exp(numeroX)} y el rango de error es {rango_de_error(numeroX,120)}")
 ```
 9. Diseñar una función que permita calcular una aproximación de la función seno alrededor de 0 para cualquier valor x (real), utilizando los primeros n términos de la serie de Maclaurin. **Nota:** use *math* para traer la función seno y mostrar la diferencia entre el valor real y la aproximación.
 $$sin(x) \approx sin(x,n) \approx \sum_{i=0}^{n} (-1)^i \frac{x^{2i+1}}{(2i+1)!}$$
